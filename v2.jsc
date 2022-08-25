@@ -1,0 +1,36 @@
+@PYTHON
+
+@@
+jeroo = Jeroo()
+while True:
+  jeroo.turn(LEFT)
+  if jeroo.isFlower(AHEAD):
+    jeroo.hop()
+    jeroo.pick()
+    jeroo.turn(RIGHT)
+    jeroo.turn(RIGHT)
+    jeroo.hop()
+    jeroo.turn(RIGHT)
+    jeroo.turn(RIGHT)
+  elif jeroo.isNet(AHEAD):
+    if jeroo.hasFlower():
+      jeroo.toss()
+      jeroo.hop()
+      jeroo.turn(RIGHT)
+  if jeroo.isClear(AHEAD):
+    jeroo.hop()
+  else:
+    jeroo.turn(RIGHT)
+    jeroo.turn(RIGHT)
+    if jeroo.isFlower(AHEAD):
+      jeroo.hop()
+      jeroo.pick()
+      jeroo.turn(RIGHT)
+      jeroo.turn(RIGHT)
+      jeroo.hop()
+      jeroo.turn(RIGHT)
+      jeroo.turn(RIGHT)
+    elif jeroo.isNet(AHEAD):
+      if jeroo.hasFlower():
+        jeroo.toss()
+        jeroo.hop()
