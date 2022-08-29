@@ -1,0 +1,24 @@
+@PYTHON
+def pathfind(self):
+  while True:
+    turn(LEFT)
+    if isFlower(AHEAD):
+      hop()
+      pick()
+    elif isNet(AHEAD):
+      if hasFlower():
+        toss()
+        hop()
+    elif isClear(AHEAD):
+      hop()
+    else:
+      turn(RIGHT)
+      turn(RIGHT)
+      if isFlower(AHEAD):
+        hop()
+        pick()
+      elif isNet(AHEAD):
+        if hasFlower():
+         toss()
+         hop()
+@@
