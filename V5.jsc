@@ -10,6 +10,7 @@ def pathfind(self):
     turn(RIGHT)
     turn(RIGHT)
   elif isNet(LEFT) and hasFlower():
+    turn(LEFT)
     toss()
     hop()
     turn(RIGHT)
@@ -31,6 +32,7 @@ def pathfind(self):
       turn(RIGHT)
       turn(RIGHT)
     elif isNet(RIGHT) and hasFlower():
+      turn(LEFT)
       toss()
       hop()
       turn(RIGHT)
