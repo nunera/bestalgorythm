@@ -1,0 +1,46 @@
+@PYTHON
+def pathfind(self):
+  if isFlower(LEFT):
+    turn(LEFT)
+    hop()
+    pick()
+    turn(RIGHT)
+    turn(RIGHT)
+    hop()
+    turn(RIGHT)
+    turn(RIGHT)
+  elif isNet(LEFT) and hasFlower():
+    toss()
+    hop()
+    turn(RIGHT)
+    turn(RIGHT)
+    hop()
+    turn(RIGHT)
+    turn(RIGHT)
+  if isClear(LEFT):
+    turn(LEFT)
+    hop()
+  else:
+    if isFlower(RIGHT):
+      turn(RIGHT)
+      hop()
+      pick()
+      turn(RIGHT)
+      turn(RIGHT)
+      hop()
+      turn(RIGHT)
+      turn(RIGHT)
+    elif isNet(RIGHT) and hasFlower():
+      toss()
+      hop()
+      turn(RIGHT)
+      turn(RIGHT)
+      hop()
+      turn(RIGHT)
+      turn(RIGHT)
+    else:
+      if isClear(AHEAD):
+        hop()
+      else:
+        turn(RIGHT)
+@@
