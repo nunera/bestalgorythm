@@ -32,7 +32,7 @@ def pathfind(self):
       turn(RIGHT)
       turn(RIGHT)
     elif isNet(RIGHT) and hasFlower():
-      turn(LEFT)
+      turn(RIGHT)
       toss()
       hop()
       turn(RIGHT)
@@ -46,3 +46,6 @@ def pathfind(self):
       else:
         turn(RIGHT)
 @@
+jeroo = Jeroo(14,0,25)
+while not jeroo.isFlower(AHEAD):
+  jeroo.pathfind()
