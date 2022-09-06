@@ -1,0 +1,44 @@
+@PYTHON
+def doubleturn(self):
+  turn(RIGHT)
+  turn(RIGHT)
+
+def pathfind(self):
+  if isFlower(LEFT):
+    turn(LEFT)
+    hop()
+    pick()
+    doubleturn()
+    hop()
+    doubleturn()
+  elif isNet(LEFT) and hasFlower():
+    turn(LEFT)
+    toss()
+    hop()
+    doubleturn
+    hop()
+    doubleturn()
+  if isClear(LEFT):
+    turn(LEFT)
+    hop()
+  else:
+    if isFlower(RIGHT):
+      turn(RIGHT)
+      hop()
+      pick()
+      doubleturn()
+      hop()
+      doubleturn()
+    elif isNet(RIGHT) and hasFlower():
+      turn(RIGHT)
+      toss()
+      hop()
+      doubleturn()
+      hop()
+      doubleturn()
+    else:
+      if isClear(AHEAD):
+        hop()
+      else:
+        turn(RIGHT)
+@@
