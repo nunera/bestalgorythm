@@ -1,0 +1,125 @@
+@PYTHON
+def doubleTurn(self):
+  turn(RIGHT)
+  turn(RIGHT)
+
+def hopLeft(self):
+  turn(LEFT)
+  hop()
+  turn(LEFT)
+  
+def hopRight(self):
+  turn(RIGHT)
+  hop()
+  turn(RIGHT)
+  
+def scanHop(self):
+    if isFlower(LEFT):
+      turn(LEFT)
+      hop()
+      pick()
+      doubleTurn()
+      hop()
+      turn(LEFT)
+    elif isNet(LEFT) and hasFlower():
+      turn(LEFT)
+      toss()
+      hop()
+      doubleTurn()
+      hop()
+      turn(LEFT)
+    else:
+      if isFlower(RIGHT):
+        turn(RIGHT)
+        hop()
+        pick()
+        doubleTurn()
+        hop()
+        turn(RIGHT)
+      elif isNet(RIGHT) and hasFlower():
+        turn(RIGHT)
+        toss()
+        hop()
+        doubleTurn()
+        hop()
+        turn(RIGHT)
+      else:
+        if isFlower(AHEAD):
+          hop()
+          pick()
+        elif isNet(AHEAD) and hasFlower():
+          toss()
+          hop()
+        elif isClear(AHEAD):
+          hop()
+  
+def pathfind(self):
+  if isFlower(LEFT):
+    turn(LEFT)
+    hop()
+    pick()
+  elif isNet(LEFT) and hasFlower():
+    turn(LEFT)
+    toss()
+    hop()
+    turn(LEFT)
+  if isClear(LEFT):
+    turn(LEFT)
+    hop()
+  else:
+    if isFlower(RIGHT):
+      turn(RIGHT)
+      hop()
+      pick()
+      turn(RIGHT)
+    elif isNet(RIGHT) and hasFlower():
+      turn(RIGHT)
+      toss()
+      hop()
+    else:
+      if isFlower(AHEAD):
+        hop()
+        pick()
+      elif isNet(AHEAD) and hasFlower():
+        toss()
+        hop()
+      elif isClear(AHEAD):
+        hop()
+      else:
+        turn(RIGHT)
+
+def line(self):
+  while not isWater(AHEAD):
+    while isClear(AHEAD):
+      scanHop()
+      
+def fillMap(self):
+  while not(isWater(LEFT) and isWater(AHEAD)):
+    while isClear(AHEAD):
+      plant()
+      hop()
+    plant()
+    if isClear(RIGHT):
+      hopRight()
+    while isClear(AHEAD):
+      plant()
+      hop()
+    plant()
+    if isClear(LEFT):
+      hopLeft() 
+
+def pickIsland(self):
+  while not(isWater(LEFT) and isWater(AHEAD)):
+    while isClear(AHEAD) or isFlower(AHEAD):
+      pick()
+      hop()
+    pick()
+    if isClear(RIGHT) or isFlower(RIGHT):
+      hopRight()
+    while isClear(AHEAD) or isFlower(AHEAD):
+      pick()
+      hop()
+    pick()
+    if isClear(LEFT) or isFlower(LEFT):
+      hopLeft()
+@@
